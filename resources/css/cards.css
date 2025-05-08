@@ -1,0 +1,583 @@
+.center-content {
+    display: flex;
+    /* align-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    justify-content: space-evenly;
+}
+
+/* CARD1 */
+.card1 {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--color-azul-uno);
+}
+
+.card1 .img-content {
+    position: relative;
+    height: 12em;
+    overflow: hidden;
+}
+
+.card1 .img-content img {
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.card1-content {
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 60px;
+}
+
+.card1-content h3,
+.card1-content p {
+    color: var(--color-texto-claro);
+    margin-bottom: 0;
+}
+
+.card1-content  .card1-price {
+    font-size: 0.8em;
+}
+
+.card1-content  .card1-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card1 .button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.card1-content .card1-description {
+    font-size: 1em;
+    margin-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+.card1-content  .card1-country {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* CARD2 */
+
+.card2 {
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--color-fondo-blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card2-content {
+    padding: 10%;
+    height: 100%;
+    color: var(--color-texto-oscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card2-content p {
+    text-align: center;
+}
+
+.card2.item .img-content img {
+    width: 70px;
+}
+
+.card2.item .card2-description {
+    text-align: justify;
+}
+
+/* CAROUSEL ------------------- */
+
+.owl-dots {
+    text-align: center;
+    /* Centra los dots */
+    margin-top: 10px;
+}
+
+.owl-stage {
+    display: flex;
+}
+
+.owl-carousel button.owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    /* Forma circular */
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--color-azul-uno);
+}
+
+.owl-carousel button.owl-dot.active {
+    background-color: var(--color-azul-tres);
+    /* Color del dot activo */
+}
+
+.carousel-container {
+    padding: 0 4%;
+}
+
+.owl-carousel .item {
+    width: 100%;
+}
+
+/* UNKNOW */
+.exp-vip-card1 {
+    height: 185px;
+    top: -62px;
+    right: 28px;
+    position: absolute;
+    display: flex;
+    color: var(--color-texto-claro);
+    background: var(--color-vip-uno);
+    font-weight: bold;
+    align-items: center;
+    transform: rotate(302deg);
+}
+
+/* EXPERIENCE CARD LONG */
+
+.card-experience {
+    border-radius: 20px;
+    margin: 30px 0;
+    overflow: hidden;
+    background: var(--color-azul-dos);
+    opacity: 0;
+    /* Oculto inicialmente */
+    transform: translateY(50px);
+    /* Desplazado hacia abajo */
+    transition: all 0.8s ease-out;
+    /* Transición suave */
+}
+
+.card-experience.visible {
+    opacity: 1;
+    /* Aparece */
+    transform: translateY(0);
+    /* En su posición final */
+}
+
+.card-exp-container {
+    display: flex;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .card-exp-container {
+        flex-direction: column;
+    }
+
+    .card-exp-left {
+        width: 100% !important;
+    }
+
+    .card-exp-right {
+        width: 95% !important;
+    }
+
+    .card-booking {
+        flex-direction: column !important;
+    }
+
+    .card-booking .left {
+        width: 100% !important;
+    }
+
+    .card-booking .right {
+        width: 100% !important;
+    }
+
+    .card-booking .button-box {
+        justify-content: center !important;
+    }
+
+    /* .exp-vip-card1 {
+        top: -91px;
+        right: 132px;
+        transform: rotate(-90deg);
+    } */
+}
+
+.card-exp-left {
+    position: relative;
+    width: 40%;
+    overflow: hidden;
+}
+
+.card-exp-left .exp-fechas {
+    z-index: 10;
+    margin: 20px;
+    font-weight: 500;
+    position: absolute;
+    color: #fff;
+    text-shadow: 1px 1px 7px rgb(0 0 0 / 90%);
+}
+
+.card-exp-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-exp-right {
+    width: 60%;
+    padding: 10px;
+    color: var(--color-texto-claro);
+    position: relative;
+}
+
+.exp-buttons {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.exp-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.exp-price {
+    font-weight: 500;
+    padding: 30px;
+    text-align: right;
+    color: var(--color-texto-oro);
+}
+
+.exp-info {
+    margin: 0 10px;
+    overflow: auto;
+    max-height: 100%;
+}
+
+.exp-location {
+    margin: 5px;
+    color: var(--color-texto-oro);
+    font-weight: 500;
+}
+
+.exp-vip {
+    display: flex;
+    color: var(--color-texto-claro);
+    background: var(--color-vip-uno);
+    font-weight: bold;
+    align-items: center;
+}
+
+/* BOOKING CARD */
+
+.card-booking {
+    overflow: hidden;
+    height: 100%;
+    border-radius: 20px;
+    margin: 2% 5%;
+    display: flex;
+}
+
+.card-booking .left {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 45%;
+}
+
+.card-booking img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-booking .book-description {
+    z-index: 10;
+    padding: 0 28px;
+    color: var(--color-texto-claro);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.card-booking .right {
+    position: relative;
+    background: var(--color-texto-claro);
+    padding: 10px 30px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-booking .book-title {
+    font-weight: bold;
+}
+
+.book-info {
+    color: var(--color-texto-claro);
+    gap: 20px;
+    width: auto;
+    background: var(--color-azul-uno);
+    padding: 4px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.book-info p{
+    margin: 0;
+}
+
+.card-booking .price-box {
+    gap: 10px;
+    margin-top: -1px;
+    line-height: 0;
+    padding: 0 20px;
+    width: auto;
+    min-width: 50%;
+    display: flex;
+    border: 1px solid;
+    justify-content: space-between;
+}
+
+.card-booking .button-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ACTIVITY CARD */
+.row-act-card-right,
+.row-act-card-left {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.card-activity {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-act-container {
+    display: flex;
+    height: 100%;
+}
+
+/* Card left */
+.row-act-card-left .col-left {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.row-act-card-left .col-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row-act-card-left .col-right {
+    width: 50%;
+    padding-left: 25px;
+    color: var(--color-azul-tres);
+    position: relative;
+}
+
+/* Card right */
+.row-act-card-right .col-right {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.row-act-card-right .col-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row-act-card-right .col-left {
+    width: 50%;
+    padding-right: 25px;
+    color: var(--color-fondo-blanco);
+    position: relative;
+}
+
+.exp-info {
+    margin: 0 10px;
+    overflow: auto;
+    max-height: 100%;
+}
+
+.day-box {
+    border-radius: 5px;
+    width: fit-content;
+    line-height: 0;
+    padding: 4px 15px;
+    margin-bottom: 20px;
+}
+
+/* EXPERIENCE PROVIDER ITEM */
+
+.provider-menu .experience-list .button-container {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.provider-menu .menu-content {
+    background-color: var(--color-azul-dos);
+}
+
+.provider-menu .experience-list {
+    padding: 2%;
+}
+
+.experience-item .item-container{
+    background: var(--color-fondo-blanco);
+    margin-bottom: 20px;
+}
+
+.experience-item .item-container p{
+    line-height: 1.5;
+    margin: 0;
+}
+
+.experience-item .item-container .up {
+    margin-bottom: -1px;
+    border: 1px solid;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.experience-item .item-container .up .left {
+
+    overflow: hidden;
+    width: 20%;
+}
+
+.experience-item .item-container .up .left img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.experience-item .item-container .up .middle {
+    padding: 1%;
+    width: 50%;
+}
+
+.experience-item .item-container .up .right {
+    padding: 1%;
+    width: 10%;
+}
+
+.experience-item .item-container .up .button-container {
+    display: flex;
+    padding: 1%;
+    width: 20%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.experience-item .item-container .down {
+    margin-bottom: 2%;
+    padding: 10px;
+    border: 1px solid;
+}
+
+.experience-item .item-container .activity-item {
+    margin: -1px 2%;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.experience-item .item-container .activity-item .middle{
+    overflow: hidden;
+    border-radius: 25px;
+    height: 150px;
+    width: 20%;
+}
+
+.experience-item .item-container .activity-item .middle img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.experience-item .item-container .activity-item .right{
+    width: 50%;
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+    .experience-item .item-container .up {
+        flex-direction: column;
+    }
+
+    .experience-item .item-container .up .right,
+    .experience-item .item-container .up .middle,
+    .experience-item .item-container .up .left {
+        width: 100%;
+    }
+
+    .experience-item .item-container .up .button-container {
+        flex-direction: row;
+    }
+
+    .experience-item .item-container .activity-item {
+        flex-direction: column;
+    }
+
+    .experience-item .item-container .activity-item .right,
+    .experience-item .item-container .activity-item .middle {
+        width: 100%;
+    }
+
+    .act-form-data {
+        flex-direction: column !important;
+    }
+
+    .act-item-content .right,
+    .act-item-content .left {
+        width: unset !important;
+    }
+    .row-act-card-left .card-act-container {
+        flex-direction: column;
+    }
+
+    .row-act-card-right .card-act-container{
+        flex-direction: column-reverse;
+    }
+
+    .row-act-card-right .col-right,
+    .row-act-card-right .col-left,
+    .row-act-card-left .col-right,
+    .row-act-card-left .col-left {
+        width: unset;
+        padding-left: 0;
+    }
+
+}

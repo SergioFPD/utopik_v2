@@ -1,0 +1,33 @@
+:root {
+    --color-fondo-web: #1c1c1b;
+    --color-texto-claro: #ececec;
+    --color-texto-oscuro: #252525;
+    --color-fondo-blanco: #EDF6FA;
+    --color-fondo-menu: #EDF6FA;
+    --color-fondo-menu-profile: #57879fc9;
+    --color-azul-uno: #1f99b5;
+    --color-azul-dos: #1e6f81;
+    --color-azul-tres: #1C3940;
+    --color-vip-uno: #CFB000;
+    --color-vip-dos: #AE981C;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333333;
+    --color-fondo-modal: #DFF2FB;
+    --color-fondo-form: #DFF2FB;
+    --color-texto-resaltado-menu: #EE5A5A;
+    --color-resaltado-menu: #FED1D1;
+
+    --color-boton: #073e4b;
+    --color-boton-oro: #615510;
+    --color-boton-borrar: #6c290f;
+    --color-texto-boton: #ffffff;
+    --color-texto-oro: #eed85d;
+
+    --color-sobre-boton: #CFB000;
+    --color-texto-sobre-boton: #40410a;
+    --color-sombra-boton: 0px 4px 6px rgba(0, 0, 0, 0.3);
+
+    --ancho-web: 1300px;
+
+    color-scheme: light;
+}

@@ -1,0 +1,445 @@
+/* MODALS */
+
+
+/* LOADING SPINNER */
+
+.loading-spinner {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 66%);
+}
+
+.loading-spinner img {
+
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+}
+
+#modal-register hr {
+
+    height: 1px;
+    border: none;
+    background-color: var(--color-azul-dos);
+    margin-bottom: 6%;
+}
+
+.modal.center {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 66%);
+    /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* Comienza completamente invisible */
+    transition: opacity 0.5s ease;
+    /* Transición para el fade-in */
+    overflow: hidden;
+
+}
+
+.modal-content p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal.show {
+    display: flex !important;
+    /* Mostrar el modal */
+    opacity: 1;
+    /* Visible completamente */
+}
+
+.menu-item:hover {
+    background-color: blueviolet;
+}
+
+.modal-content {
+
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    /* Bordes redondeados solo arriba */
+    box-shadow: 4px 5px 6px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Ocultar el desplazamiento horizontal */
+
+    animation: slideUp 0.5s ease-in-out;
+}
+
+.modal.hide .modal-content {
+    animation: slideDown 0.5s ease-in-out forwards;
+    /* Animación inversa */
+}
+
+.close {
+    z-index: 10;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close.button {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* RESERVE FORM */
+.res-image-container {
+    position: relative;
+    width: calc(100% + 40px);
+    margin: -20px -20px 10px -20px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.res-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.res-title {
+    z-index: 5;
+    color: var(--color-texto-claro);
+    text-shadow: 1px 1px 16px rgb(0 0 0 / 90%);
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+}
+
+#modal-new-reserve form .price {
+    margin: 0;
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+#modal-new-reserve .data-enter {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-new-reserve .values {
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal-new-reserve .values .left {
+    text-align: left;
+}
+
+#modal-new-reserve .slider-value {
+    font-weight: bold;
+}
+
+#modal-new-reserve select {
+    color: var(--color-azul-tres);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-azul-tres);
+}
+
+#modal-new-reserve .amount {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* LOGIN USER */
+.modal.login {
+
+    padding-top: 69px;
+    height: 200px;
+    top: 8px;
+    right: 10px;
+    position: absolute;
+    animation: slideInFromRight 0.2s ease-out;
+}
+
+.login-content {
+    padding: 10px;
+    height: 240px;
+    background: var(--color-fondo-modal);
+    border-radius: 10px;
+    border: solid 1px var(--color-azul-tres);
+}
+
+.modal-login-row {
+    display: block !important;
+    position: relative;
+}
+
+.modal-login-row:hover .modal.login {
+
+    display: block !important;
+
+}
+
+.modal-login-row:focus-within .modal.login {
+
+    display: block !important;
+}
+
+/* USER MENU */
+
+.modal.user-menu {
+    right: 5px;
+    padding-top: 50px;
+    top: 13px;
+    position: absolute;
+    animation: slideInFromRight 0.2s ease-out;
+}
+
+.user-menu-content {
+    padding: 10px 20px;
+    width: 150px;
+    background: var(--color-fondo-menu);
+    border-radius: 0 0 20px 20px;
+}
+
+.modal-user-menu {
+    margin: 0;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+}
+
+.modal-user-menu:hover .modal.user-menu {
+    display: block !important;
+}
+
+.modal-user-menu:focus-within .modal.user-menu {
+    display: block !important;
+}
+
+.menu-user-item {
+    display: block;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.menu-user-item p {
+    margin: 0;
+}
+
+.menu-user-item:hover {
+    background: var(--color-resaltado-menu);
+    color: var(--color-texto-resaltado-menu);
+
+}
+
+/* COUNTRY SELECTION */
+
+.modal-country-select {
+    display: block !important;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-country-select p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal.country-select {
+    right: 12px;
+    padding-top: 38px;
+    height: auto;
+    top: 17px;
+    position: absolute;
+    animation: slideInFromRight 0.2s ease-out;
+}
+
+.country-select-content {
+    padding: 8%;
+    height: auto;
+    width: 100%;
+    background: var(--color-fondo-menu);
+    border-radius: 0 0 20px 20px;
+}
+
+.modal-country-select:hover .modal.country-select {
+    display: block !important;
+}
+
+.modal-country-select:focus-within .modal.country-select {
+    display: block !important;
+}
+
+.country-select-item {
+    display: block;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+
+.country-select-item p {
+    width: 100%;
+    margin: 0;
+    font-weight: normal;
+}
+
+.country-select-item:hover {
+    background: var(--color-resaltado-menu);
+    color: var(--color-texto-resaltado-menu);
+}
+
+/* MESSAGE */
+#modal-message .modal-content {
+
+    border-radius: 20px;
+    background: var(--color-fondo-modal);
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 29px;
+}
+
+#modal-message .modal-content img {
+    width: 50px;
+}
+
+/* Animación del modal entrando desde la derecha */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        /* Comienza fuera del área visible */
+    }
+
+    to {
+        transform: translateX(0);
+        /* Llega a su posición final */
+    }
+}
+
+/* Animación del modal entrando desde la derecha */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(100%);
+        /* Comienza fuera del área visible */
+    }
+
+    to {
+        transform: translateY(0);
+        /* Llega a su posición final */
+    }
+}
+
+/* COUNTRY CREATE/MODIFY */
+#modal-country-form input[type="file"] {
+    display: none;
+}
+
+#modal-country-form .image-preview-container {
+    width: 100%;
+}
+
+#modal-country-form .image-preview-container {
+    width: 100%;
+}
+
+/* CUSTOMER MODIFY */
+#modal-userdata .button-contanier {
+    display: flex;
+    justify-content: center;
+}
+
+#modal-userdata .data {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#modal-userdata .left {
+    gap: 20px;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+#modal-userdata .right {
+    width: 50%;
+}
+
+
+#modal-userdata .right .image-container {
+    border-radius: 150px;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+}
+
+#modal-userdata .right .image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* EVALUATION FORM */
+#modal-reserve-rate .group-col {
+    padding: 10px;
+    border: 1px solid;
+}
+
+#modal-reserve-rate input[type="range"] {
+    width: 80%;
+}
+
+#modal-reserve-rate .slider-value {
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+#modal-reserve-rate .modal-content .group-col p {
+    text-align: left;
+    font-weight: normal;
+    margin: 5px 0;
+}

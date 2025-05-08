@@ -1,0 +1,87 @@
+html {
+    font-size: 14px;
+    /* Base para rem */
+}
+
+h1{
+    line-height: 1.1;
+}
+
+a{
+    color: var(--color-texto-claro);
+}
+
+
+p.text-nomal{
+    font-weight: normal;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.text-title {
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 1;
+    font-weight: bold;
+    
+}
+
+.text-shadow{
+    text-shadow: 1px 1px 16px rgb(0 0 0 / 90%);
+}
+
+.text-very-small {
+    font-size: 0.8em;
+}
+
+.text-price {
+    font-size: 1.3em !important;
+}
+
+.text-small {
+    font-size: 2em;
+    line-height: 1;
+}
+
+.text-medium {
+    font-size: 3em;
+}
+
+.text-big {
+    font-size: 4em;
+}
+
+.vip-rotate {
+    font-size: 22px;
+    transform: rotate(270deg);
+}
+
+.vip-rotate-card1 {
+    font-size: 22px;
+    transform: rotate(90deg);
+}
+
+.texto-oscuro{
+    color: var(--color-texto-oscuro);
+}
+
+.texto-claro{
+    color: var(--color-texto-claro);
+}
+
+/* TEXTO DESTACADO */
+.destacado{
+    border: 1px solid;
+    border-radius: 10px;
+    height: 1.5em;
+    padding: 5px 10px;
+}
+
+.text-title-white{
+
+    color: var(--color-texto-claro);
+    margin: 30px 0 10px 20px;
+}
+

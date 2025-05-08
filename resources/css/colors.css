@@ -1,0 +1,86 @@
+
+/* TEXT ----------------------------------------------- */
+
+.texto-azul-uno {
+    color: var(--color-azul-uno);
+}
+
+.texto-azul-dos {
+    color: var(--color-azul-dos);
+}
+
+.texto-azul-tres {
+    color: var(--color-azul-tres);
+}
+
+.texto-blanco {
+    color: #ffffff;
+}
+
+.texto-oro {
+    color: var(--color-texto-oro);
+}
+
+/* BACKGROUND ----------------------------------------------- */
+
+.fondo-modal {
+    background: var(--color-fondo-modal);
+}
+
+.fondo-azul-dos {
+    background: var(--color-azul-dos);
+}
+
+.fondo-azul-uno {
+    background: var(--color-azul-uno);
+}
+
+.fondo-azul-tres {
+    background: var(--color-azul-tres);
+}
+
+.fondo-blanco {
+    background: #ffffff;
+}
+
+.barra-fondo-blanco {
+    background: #ffffff;
+}
+
+.fondo-claro{
+
+    background: var(--color-fondo-blanco);
+}
+
+.gold {
+    background: var(--color-vip-dos) !important;
+}
+
+/* BUTTONS ----------------------------------------------- */
+.btn-standard.alpha2 p {
+    color: var(--color-texto-oscuro);
+}
+
+.btn-standard.delete {
+    background: var(--color-boton-borrar);
+}
+
+.gold-button {
+    background: var(--color-boton-oro) !important;
+}
+
+.blue-button {
+    background: var(--color-azul-uno) !important;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    color: rgb(199, 66, 66);
+}
+
+.btn-standard:hover {
+    background: var(--color-sobre-boton) !important;
+    color: var(--color-texto-sobre-boton) !important;
+}
+
+
