@@ -48,6 +48,7 @@ Route::middleware(['pin'])->group(function () {
     // Verifica que el pais este activo
     Route::get('/country/{country}', [NavController::class, 'country'])->name('country')->middleware('country');
     Route::get('/experience/detail/{experience}', [NavController::class, 'viewDetail'])->name('experience.detail')->middleware('country');
+    Route::post('/contact', [NavController::class, 'contact'])->name('contact');
 });
 
 // ADMIN

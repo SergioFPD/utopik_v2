@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="footer-right">
-            <p>{{$footerContent}}</p>
+            {{-- <p>{{$footerContent}}</p> --}}
             <p>Contacta con nosotros</p>
             <p>+677 453 433</p>
             <p>info@utopik.com</p>

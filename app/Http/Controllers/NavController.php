@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Pais;
 use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\DB;
+use App\Mail\ContactMail;
+use App\Mail\ConfirmationMail;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +20,6 @@ class NavController extends Controller
     // a traves del AppServiceProvider de Providers
     public function home()
     {
-
         $ultimasExperiencias = Experiencia::where('activa', true)
             ->orderBy('created_at', 'desc')
             ->take(5)
@@ -78,5 +79,24 @@ class NavController extends Controller
         }
 
         return View('_modals.reserve-form', compact('experiencia'));
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'company'    => 'required|string|max:100',
+            'email'   => 'required|email',
+            'message' => 'required|string|min:10',
+        ]);
+
+        $details = $request->only('company', 'email', 'message');
+
+        // Enviar al administrador (tu correo desde .env)
+        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new ContactMail($details));
+
+        // Enviar una copia al visitante
+        Mail::to($request->email)->send(new ConfirmationMail());
+
+        return back()->with('success', 'Message sent successfully!');
     }
 }

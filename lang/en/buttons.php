@@ -10,6 +10,7 @@ return [
     'delete' => 'Delete',
     'modify' => 'Modify',
     'cancel' => 'Cancel',
+    'send' => 'Send',
     'my_experiences' => 'My experiences',
     'my_reservations' => 'My reservations',
     'add_experience' => 'Create experience',
