@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $customer = User::find(Crypt::decryptString($customer_id));
 
-        return View('_modals.customer-modify', compact('customer'));
+        return View('_partials.customer-modify', compact('customer'));
     }
 
     public function updateCustomer(Request $request, $customer_id)
@@ -115,7 +115,7 @@ class AdminController extends Controller
             $country = null;
         }
 
-        return View('_modals.country-form', compact('country'));
+        return View('_partials.country-form', compact('country'));
     }
 
     // For open modal form
@@ -127,7 +127,7 @@ class AdminController extends Controller
             $provider = null;
         }
 
-        return View('_modals.provider-form', compact('provider'));
+        return View('_partials.provider-form', compact('provider'));
     }
 
     public function storeProvider(Request $request)

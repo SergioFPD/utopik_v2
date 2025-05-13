@@ -15,7 +15,7 @@
                 </div>
                 @if (Auth::check() && Auth::user()->rol == 'cliente')
                     <a class="btn-standard gold"
-                        onclick="insertModalPage('{{ route('form.reserve', $rutaReserva) }}', 'modal-new-reserve', true, false)">
+                        onclick="insertModalPage('{{ route('form.reserve', $rutaReserva) }}', true, false)">
                         <p>{{ __('buttons.make_reserve') }}</p>
                     </a>
                 @endif
@@ -40,4 +40,4 @@
 </div>
 
 {{-- Donde se inyectará la página modal --}}
-@include('_partials.page-content')
+@include('_modals.modal-page')

@@ -39,7 +39,7 @@
                     @endif
                     <div class="button-container">
                         <button class="btn-standard"
-                            onclick="insertModalPage('{{ route('form.provider', 'new') }}', 'modal-provider', false, true)">{{ __('buttons.new_provider') }}</button>
+                            onclick="insertModalPage('{{ route('form.provider', 'new') }}', false, true)">{{ __('buttons.new_provider') }}</button>
                     </div>
                 </div>
             @endif
@@ -58,7 +58,7 @@
                     @endif
                     <div class="button-container">
                         <button
-                            class="btn-standard"onclick="insertModalPage('{{ route('form.country', 'new') }}', 'modal-country-form', true, true)">{{ __('buttons.new_country') }}</button>
+                            class="btn-standard"onclick="insertModalPage('{{ route('form.country', 'new') }}', true, true)">{{ __('buttons.new_country') }}</button>
                     </div>
                 </div>
             @endif
@@ -67,7 +67,7 @@
         </div>
 
         {{-- Donde se inyectará la página modal --}}
-        @include('_partials.page-content')
+        @include('_modals.modal-page')
 
         {{-- Footer variable según la página mostrada --}}
         @component('components.footer')

@@ -45,9 +45,15 @@
             <a class="btn-standard" href="{{ route('experience.detail', $experienciaNombre) }}">
                 <p>{{ __('buttons.view_experience') }}</p>
             </a>
-            <a class="btn-standard" href="">
+            @if($restoPagar>0)
+            <a class="btn-standard"  onclick="insertModalPage('{{ route('payment', $reservaId) }}', 'modal-pay-rest', false, false)">
                 <p>{{ __('buttons.pay_all') }}</p>
             </a>
+            @endif
         </div>
     </div>
 </div>
+
+{{-- Donde se inyectará la página modal --}}
+{{-- @include('_partials.page-content') --}}
+@include('_modals.modal-page')

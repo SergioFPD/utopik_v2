@@ -1,22 +1,24 @@
 <?php
 $today = new DateTime();
 $today = date('Y-m-d');
+
+$puedePuntuar = false;
 ?>
 
 <div class="table-item">
     <div class="item-container">
         <table>
-            <caption class="text-title-white">{{__('labels.reserve_list')}}</caption>
+            <caption class="text-title-white">{{ __('labels.reserve_list') }}</caption>
             <thead>
                 <tr>
-                    <th>{{__('labels.name')}}</th>
-                    <th>{{__('labels.date')}}</th>
-                    <th>{{__('labels.customer')}}</th>
-                    <th>{{__('labels.email')}}</th>
-                    <th>{{__('labels.adults')}}</th>
-                    <th>{{__('labels.childs')}}</th>
-                    <th>{{__('labels.total')}}</th>
-                    <th>{{__('labels.evaluation')}}</th>
+                    <th>{{ __('labels.name') }}</th>
+                    <th>{{ __('labels.date') }}</th>
+                    <th>{{ __('labels.customer') }}</th>
+                    <th>{{ __('labels.email') }}</th>
+                    <th>{{ __('labels.adults') }}</th>
+                    <th>{{ __('labels.childs') }}</th>
+                    <th>{{ __('labels.total') }}</th>
+                    <th>{{ __('labels.evaluation') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,15 +28,26 @@ $today = date('Y-m-d');
                         @foreach ($experiencia->reserva as $reserva)
                             <tr>
                                 <td>{{ $experiencia->nombre }}</td>
-                                <td>{{ $reserva->exp_fecha->fecha < $today ? __('labels.date_expired') : $reserva->exp_fecha->fecha }}
+                                <td>
+                                    @if ($reserva->exp_fecha && $reserva->exp_fecha->fecha)
+                                        @if ($reserva->exp_fecha->fecha > $today)
+                                            {{ $reserva->exp_fecha->fecha }}
+                                        @else
+                                            {{ __('labels.date_expired') }}
+                                            @php $puedePuntuar = true @endphp
+                                        @endif
+                                    @else
+                                        {{ __('labels.date_unknown') }}
+                                    @endif
                                 </td>
+
                                 <td>{{ $reserva->user->nombre }}</td>
                                 <td>{{ $reserva->user->email }}</td>
                                 <td>{{ $reserva->adultos }}</td>
                                 <td>{{ $reserva->menores }}</td>
                                 <td>{{ $reserva->dimePrecioTotal() }}€</td>
                                 <td>
-                                    @if ($reserva->exp_fecha->fecha >= $today)
+                                    @if (!$puedePuntuar)
                                         {{ __('labels.not_finished') }}
                                     @elseif($reserva->puntuacion == 0)
                                         <button class="btn-standard"

@@ -4,8 +4,6 @@
     @include('menus.nav-menu-profile')
 @endsection
 @section('content')
-    {{-- Modal windows --}}
-    {{-- @include('_modals.reserve-modify') --}}
 
     <div class="content user-profile">
         @component('components.row-profile')
@@ -101,6 +99,7 @@
                                     : asset('storage/images/no-image.jpg') }}
 
                             @endslot
+                            @slot('reservaId', $reserva->getEncryptedId())
                             @slot('esVip', $reserva->experiencia->vip)
                             @slot('titulo', $reserva->experiencia->nombre)
                             @slot('descripcionCorta', $reserva->experiencia->descripcion_corta)
@@ -113,6 +112,7 @@
                             @slot('fecha', $reserva->exp_fecha->fecha)
                             @slot('restoPagar', $reserva->dimePorPagar())
                             @slot('experienciaNombre', $reserva->experiencia->nombre)
+                            
                         @endcomponent
                     @endif
                 @endforeach

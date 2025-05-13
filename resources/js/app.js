@@ -187,7 +187,7 @@ window.openModal = function (modal) {
 };
 
 // Inserta una página modal recibida por la ruta de un controlador
-window.insertModalPage = function (ruta, modalName, hasImage, checkF) {
+window.insertModalPage = function (ruta, hasImage, checkF) {
 
     // Línea HTML en la que se agregará la página modal
     // HA DE ESTAR DEFINIDA EN LA PÁGINA
@@ -214,7 +214,8 @@ window.insertModalPage = function (ruta, modalName, hasImage, checkF) {
                     checkForm.init();
                 }
 
-                openModal(modalName);
+                // openModal(modalName);
+                openModal('modal-page');
             })
             .catch(error => {
                 alert('Error al cargar el contenido');

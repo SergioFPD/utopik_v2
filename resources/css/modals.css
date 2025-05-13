@@ -145,18 +145,18 @@
     right: 0;
 }
 
-#modal-new-reserve form .price {
+.new-reserve form .price {
     margin: 0;
     font-size: 0.7em;
     font-weight: 500;
 }
 
-#modal-new-reserve .data-enter {
+.new-reserve .data-enter {
     display: flex;
     flex-direction: column;
 }
 
-#modal-new-reserve .values {
+.new-reserve .values {
     padding: 10px 40px;
     display: flex;
     flex-direction: row;
@@ -164,27 +164,25 @@
     align-items: center;
 }
 
-#modal-new-reserve .values .left {
+.new-reserve .values .left {
     text-align: left;
 }
 
-#modal-new-reserve .slider-value {
+.new-reserve .slider-value {
     font-weight: bold;
 }
 
-#modal-new-reserve select {
+.new-reserve select {
     color: var(--color-azul-tres);
     border-radius: 10px;
     padding: 10px;
     border: 1px solid var(--color-azul-tres);
 }
 
-#modal-new-reserve .amount {
+.new-reserve .amount {
     display: flex;
     justify-content: space-evenly;
 }
-
-
 
 
 /* LOGIN USER */
@@ -373,72 +371,76 @@
 }
 
 /* COUNTRY CREATE/MODIFY */
-#modal-country-form input[type="file"] {
+.country-form input[type="file"] {
     display: none;
 }
 
-#modal-country-form .image-preview-container {
+.country-form .image-preview-container {
     width: 100%;
 }
 
-#modal-country-form .image-preview-container {
+.country-form .image-preview-container {
     width: 100%;
 }
 
 /* CUSTOMER MODIFY */
-#modal-userdata .button-contanier {
+.userdata .button-contanier {
     display: flex;
     justify-content: center;
 }
 
-#modal-userdata .data {
+.userdata .data {
     gap: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#modal-userdata .left {
+.userdata .left {
     gap: 20px;
     display: flex;
     width: 50%;
     flex-direction: column;
 }
 
-#modal-userdata .right {
+.userdata .right {
     width: 50%;
 }
 
 
-#modal-userdata .right .image-container {
+.userdata .right .image-container {
     border-radius: 150px;
     overflow: hidden;
     width: 100%;
     height: 200px;
 }
 
-#modal-userdata .right .image-container img {
+.userdata .right .image-container img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
 /* EVALUATION FORM */
-#modal-reserve-rate .group-col {
+.reserve-rate p {
+    font-weight: 400;
+}
+
+.reserve-rate .group-col {
     padding: 10px;
     border: 1px solid;
 }
 
-#modal-reserve-rate input[type="range"] {
+.reserve-rate input[type="range"] {
     width: 80%;
 }
 
-#modal-reserve-rate .slider-value {
+.reserve-rate .slider-value {
     font-weight: 500;
     font-size: 1.4em;
 }
 
-#modal-reserve-rate .modal-content .group-col p {
+.reserve-rate .modal-content .group-col p {
     text-align: left;
     font-weight: normal;
     margin: 5px 0;

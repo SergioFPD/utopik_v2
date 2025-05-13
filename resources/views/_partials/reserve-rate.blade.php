@@ -1,6 +1,5 @@
-<div id="modal-reserve-rate" class="modal center">
-    <div class="modal-content">
-        <p id="nombre">{{ __('labels.rating_customer') }} {{ $customer }}</p>
+    <div class="reserve-rate">
+        <h3 id="nombre">{{ __('labels.rating_customer') }} {{ $customer }}</h3>
         <span class="close">&times;</span>
         <form action="{{ route('rate.customer', $reservation->getEncryptedId()) }}" method="post">
             @method('PUT')
@@ -80,4 +79,3 @@
             <input class="btn-standard" type="submit" value="{{ __('buttons.send_evaluation') }}">
         </form>
     </div>
-</div>

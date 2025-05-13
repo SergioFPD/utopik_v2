@@ -324,7 +324,7 @@ class ProviderController extends Controller
         $customer = $usuario->nombre;
 
 
-        return View('_modals.reserve-rate', compact('reservation', 'customer'));
+        return View('_partials.reserve-rate', compact('reservation', 'customer'));
     }
 
     public function rateCustomer(Request $request, $reservation_id)

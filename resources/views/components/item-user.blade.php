@@ -22,7 +22,7 @@
                                 <td>{{ ($usuario->bloqueado) ? __('labels.yes') : __('labels.no')}}</td>
                                 <td>
                                     <button class="btn-standard"
-                                        onclick="insertModalPage('{{ route('form.customer', $usuario->getEncryptedId()) }}', 'modal-userdata', false, true)">{{ __('buttons.modify') }}</button>
+                                        onclick="insertModalPage('{{ route('form.customer', $usuario->getEncryptedId()) }}', false, true)">{{ __('buttons.modify') }}</button>
                                 </td>
                             </tr>
                         @endif

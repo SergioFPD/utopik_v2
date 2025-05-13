@@ -69,18 +69,6 @@ class NavController extends Controller
         }
     }
 
-    public function formReserve($experiencia_id)
-    {
-
-        $experiencia = Experiencia::find(Crypt::decryptString($experiencia_id));
-
-        if (!$experiencia) {
-            $experiencia = "error";
-        }
-
-        return View('_modals.reserve-form', compact('experiencia'));
-    }
-
     public function contact(Request $request)
     {
         $request->validate([

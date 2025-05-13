@@ -18,13 +18,23 @@ class UserController extends Controller
         $ultimasExperiencias = Experiencia::orderBy('created_at', 'desc')->take(5)->get();
         if ($menu == 'reserves') {
             $user = Auth::user();
-            $reservas = Reserva::join('exp_fechas', 'exp_fechas.id', '=', 'reservas.exp_fecha_id') // unir tabla exp_fechas y reservas por id
-                ->where('reservas.user_id', $user->id)  // Filtrar por el cliente
-                ->orderBy('exp_fechas.fecha', 'asc')  // Ordenar por la fecha de la tabla 'exp_fechas'
-                ->get();
+            // $reservas = Reserva::join('exp_fechas', 'exp_fechas.id', '=', 'reservas.exp_fecha_id')
+            //     ->where('reservas.user_id', $user->id)
+            //     ->orderBy('exp_fechas.fecha', 'asc')
+            //     ->select('reservas.*', 'reservas.id as reserva_id') // ← importante: usar alias
+            //     ->get();
+            $reservas = Reserva::where('user_id', $user->id)
+                ->with('exp_fecha')
+                ->get()
+                ->sortBy(function ($reserva) {
+                    return $reserva->exp_fecha->fecha;
+                })
+                ->values();
         } else {
             $reservas = null;
         }
+
+
 
         return view('profiles.client-profile', compact('ultimasExperiencias', 'reservas', 'menu'));
     }
@@ -74,5 +84,29 @@ class UserController extends Controller
         }
         $user->save();
         return redirect()->back()->with('success', __('alerts.user_updated', ['name' => $user->nombre]));
+    }
+
+    public function formReserve($experiencia_id)
+    {
+
+        $experiencia = Experiencia::find(Crypt::decryptString($experiencia_id));
+
+        if (!$experiencia) {
+            $experiencia = "error";
+        }
+
+        return View('_partials.reserve-form', compact('experiencia'));
+    }
+
+    public function payment($reserve_id)
+    {
+
+        $reserva = Reserva::find(Crypt::decryptString($reserve_id));
+
+        if (!$reserva) {
+            $reserva = "error";
+        }
+
+        return View('_partials.pay-rest', compact('reserva'));
     }
 }

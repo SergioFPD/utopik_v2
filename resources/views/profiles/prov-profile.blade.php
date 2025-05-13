@@ -42,38 +42,13 @@
                         </div>
                     @endif
 
-
-
-
-
-                    {{-- 
-                                <div class="reserve-content">
-                                    <h3> Nombre de experiencia: {{ $experiencia->nombre }}</h3>
-                                    <p>Adultos: {{ $reserva->adultos }}</p>
-                                    <p>Cliente: {{ $reserva->user->nombre }}</p>
-                                    <p>Email del cliente: {{ $reserva->user->email }}</p>
-                                    <p>Precio total de la reserva: {{ $reserva->dimePrecioTotal() }}€</p>
-              
-                                    @if ($reserva->puntuacion == 0)
-                                        <button class="btn-standard"
-                                            onclick="insertModalPage('{{ route('form.evaluate', $reserva->getEncryptedId()) }}', 'modal-reserve-rate', false, false)">{{ __('buttons.evaluate') }}</button>
-                                    @else
-                                        <p>Se ha evaluado con: {{ $reserva->puntuacion }} puntos</p>
-                                    @endif
-
-
-                                </div> --}}
-
-
-
-
                 </div>
             @endif
 
         </div>
 
         {{-- Donde se inyectará la página modal --}}
-        @include('_partials.page-content')
+        @include('_modals.modal-page')
 
         {{-- Footer variable según la página mostrada --}}
         @component('components.footer')

@@ -11,6 +11,7 @@ return [
     'modify' => 'Modificar',
     'cancel' => 'Cancelar',
     'send' => 'Enviar',
+    'pay' => 'Pagar',
     'my_experiences' => 'Mis experiencias',
     'my_reservations' => 'Mis reservas',
     'add_experience' => 'Crear experiencia',

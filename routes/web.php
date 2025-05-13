@@ -98,7 +98,9 @@ Route::middleware(['auth', 'role:cliente'])->group(function () {
     Route::post('/client/store/reserve', [UserController::class, 'storeReserve'])->name('reserve.store');
     Route::put('/client/update/user', [UserController::class, 'updateUser'])->name('client.update.user');
     // Route modal form reservation
-    Route::get('/form/reserve/{experience}', [NavController::class, 'formReserve'])->name('form.reserve');
+    Route::get('/form/reserve/{experience}', [UserController::class, 'formReserve'])->name('form.reserve');
+    // Payment
+    Route::get('/payment/{reserve}', [UserController::class, 'payment'])->name('payment');
 });
 
 // GUEST

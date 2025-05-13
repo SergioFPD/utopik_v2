@@ -11,6 +11,7 @@ return [
     'modify' => 'Modify',
     'cancel' => 'Cancel',
     'send' => 'Send',
+     'pay' => 'Pay',
     'my_experiences' => 'My experiences',
     'my_reservations' => 'My reservations',
     'add_experience' => 'Create experience',
