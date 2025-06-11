@@ -132,7 +132,10 @@ class AdminController extends Controller
 
     public function storeProvider(Request $request)
     {
-        User::create($request->all());
+        User::create(array_merge(
+            $request->all(),
+            ['rol' => 'proveedor']
+        ));
 
         return redirect()->back()->with('success', __('alerts.provider_created', ['name' => $request->nombre]));
     }

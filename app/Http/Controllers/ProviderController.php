@@ -95,7 +95,7 @@ class ProviderController extends Controller
             $imageName = time() . '.' . $request->image->extension();
 
             // Crear una carpeta con el ID del usuario autenticado
-            $folderPath = public_path("images/providers/" . $user->id);
+            $folderPath = "public/images/providers/" . $user->id;
             $folderUri = "images/providers/" . $user->id; // Se guardará como ruta de la imagen
 
             $request->image->storeAs($folderPath, $imageName);
